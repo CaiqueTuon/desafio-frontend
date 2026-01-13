@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sales-dashboard": {
+    "desafio-frontend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -16,7 +16,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/sales-dashboard",
+            "outputPath": "dist/desafio-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -70,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "sales-dashboard:build:production"
+              "browserTarget": "desafio-frontend:build:production"
             },
             "development": {
-              "browserTarget": "sales-dashboard:build:development"
+              "browserTarget": "desafio-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sales-dashboard:build"
+            "browserTarget": "desafio-frontend:build"
           }
         },
         "test": {
@@ -104,5 +104,5 @@
       }
     }
   },
-  "defaultProject": "sales-dashboard"
+  "defaultProject": "desafio-frontend"
 }

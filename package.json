@@ -1,13 +1,13 @@
 {
-  "name": "sales-dashboard",
+  "name": "desafio-frontend",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build": "ng build --prod --base-href /sales-dashboard/",
-    "deploy": "npx ngh --dir=dist/sales-dashboard"
+    "build": "ng build --prod --base-href /desafio-frontend/",
+    "deploy": "npx ngh --dir=dist/desafio-frontend"
   },
   "private": true,
   "dependencies": {

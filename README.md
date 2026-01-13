@@ -17,9 +17,6 @@ Ele segue boas práticas de Angular e é ideal para fins de portfólio ou prova 
 
 ## Demonstração
 
-O projeto está hospedado no **GitHub Pages**:  
-[Visualizar Dashboard](https://CaiqueTuon.github.io/sales-dashboard/)
-
 ![Dashboard GIF](docs/dashboard-demo.gif)
 
 ---
@@ -90,8 +87,8 @@ ng version
 
 Abra um terminal ou prompt de comando e execute:
 
-git clone https://github.com/CaiqueTuon/sales-dashboard.git
-cd sales-dashboard
+git clone https://github.com/CaiqueTuon/desafio-frontend.git
+cd desafio-frontend
 
 Isso vai baixar todo o código do projeto para a sua máquina.
 
@@ -153,10 +150,9 @@ Tênis,1,199.90
 
 - Gráfico de barras
 
+  Clique no ícone 👁 na tabela para abrir o modal de detalhes do produto.
 
-    Clique no ícone 👁 na tabela para abrir o modal de detalhes do produto.
-
-    Clique em “Exportar CSV” para baixar os agregados (produto, quantidade, valor total, total geral, produto mais vendido).
+  Clique em “Exportar CSV” para baixar os agregados (produto, quantidade, valor total, total geral, produto mais vendido).
 
 ## Testes
 
