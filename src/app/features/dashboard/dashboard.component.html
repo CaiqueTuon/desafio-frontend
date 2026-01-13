@@ -1,0 +1,101 @@
+<div class="dashboard">
+  <div class="top">
+    <p-toolbar class="mb-4">
+      <div class="p-toolbar-group-left">
+        <h2>
+          <i class="pi pi-chart-bar" style="margin-right: 0.5rem"></i>
+          Relatório de Vendas
+        </h2>
+      </div>
+      <div class="p-toolbar-group-right">
+        <button
+          pButton
+          label="Exportar CSV"
+          icon="pi pi-download"
+          class="p-button-success"
+          (click)="downloadCSV()"
+        ></button>
+      </div>
+    </p-toolbar>
+
+    <app-upload (csvLoaded)="onCSVLoaded($event)"></app-upload>
+  </div>
+
+  <div class="kpi">
+    <p-card>
+      <h4>Total Geral</h4>
+      <h2>{{ totalGeral | currencyBR }}</h2>
+    </p-card>
+  </div>
+
+  <div class="kpi">
+    <p-card>
+      <h4>Produto mais vendido</h4>
+      <h2>{{ maisVendido?.produto || "-" }}</h2>
+      <p-tag
+        *ngIf="maisVendido"
+        severity="success"
+        [value]="maisVendido.quantidade + ' unidades'"
+      ></p-tag>
+    </p-card>
+  </div>
+
+  <div class="table">
+    <span class="p-input-icon-left mb-2">
+      <i class="pi pi-search"></i>
+      <input pInputText [(ngModel)]="filtro" placeholder="Buscar produto..." />
+    </span>
+
+    <p-table
+      [value]="vendasFiltradas"
+      [paginator]="true"
+      [rows]="4"
+      [rowsPerPageOptions]="[4, 5, 10]"
+      [scrollable]="true"
+      scrollHeight="400px"
+      styleClass="p-datatable-sm p-datatable-striped"
+      [sortMode]="'multiple'"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="produto">
+            Produto
+            <p-sortIcon field="produto"></p-sortIcon>
+          </th>
+          <th pSortableColumn="quantidade">
+            Quantidade
+            <p-sortIcon field="quantidade"></p-sortIcon>
+          </th>
+          <th pSortableColumn="valorTotal">
+            Valor Total
+            <p-sortIcon field="valorTotal"></p-sortIcon>
+          </th>
+          <th></th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-row>
+        <tr>
+          <td>{{ row.produto }}</td>
+          <td><p-tag severity="info" [value]="row.quantidade"></p-tag></td>
+          <td>{{ row.valorTotal | currencyBR }}</td>
+          <td>
+            <button
+              pButton
+              icon="pi pi-eye"
+              class="p-button-text"
+              (click)="abrirDetalhe(row)"
+            ></button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+  <div class="chart">
+    <p-card>
+      <h3>Quantidade por Produto</h3>
+      <p-chart type="bar" [data]="chartData" style="height: 100%"></p-chart>
+    </p-card>
+  </div>
+</div>

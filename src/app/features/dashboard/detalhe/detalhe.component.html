@@ -1,0 +1,16 @@
+<div class="modal-header">
+  <h4 class="modal-title">Detalhes do Produto</h4>
+  <button type="button" class="close" (click)="fechar()" aria-label="Fechar">
+    &times;
+  </button>
+</div>
+
+<div class="modal-body">
+  <p><strong>Produto:</strong> {{ venda.produto }}</p>
+  <p><strong>Quantidade vendida:</strong> {{ venda.quantidade }}</p>
+  <p><strong>Valor total:</strong> {{ venda.valorTotal | currencyBR }}</p>
+</div>
+
+<div class="modal-footer">
+  <button class="btn btn-secondary" (click)="fechar()">Fechar</button>
+</div>

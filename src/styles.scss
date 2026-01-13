@@ -1,0 +1,108 @@
+@import "primeng/resources/themes/saga-blue/theme.css";
+@import "primeng/resources/primeng.min.css";
+@import "primeicons/primeicons.css";
+
+:root {
+  --mirante-primary: #6aa400;
+  --mirante-secondary: #4d7c0f;
+  --mirante-light: #eaf5d8;
+  --mirante-bg: #f6f9f2;
+  --mirante-text: #2f3e1d;
+}
+
+body {
+  margin: 0;
+  background: var(--mirante-bg);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--mirante-text);
+}
+
+.p-toolbar {
+  background: white;
+  border-radius: 12px;
+  border-bottom: 3px solid var(--mirante-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.p-card {
+  background: white;
+  border-radius: 14px;
+  border-left: 6px solid var(--mirante-primary);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+h2 {
+  margin: 0;
+  color: var(--mirante-primary);
+  font-weight: 700;
+}
+
+h4 {
+  color: var(--mirante-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.p-datatable {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.p-datatable thead th {
+  background: var(--mirante-light);
+  color: var(--mirante-dark);
+  font-weight: 700;
+  border: none;
+}
+
+.p-datatable tbody tr {
+  transition: background 0.2s;
+}
+
+.p-datatable tbody tr:hover {
+  background: #f0f7e5;
+}
+
+.p-inputtext {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #d5e3c3;
+}
+
+.p-inputtext:focus {
+  border-color: var(--mirante-primary);
+  box-shadow: 0 0 0 1px var(--mirante-primary);
+}
+
+.p-button-success {
+  background: var(--mirante-primary) !important;
+  border-color: var(--mirante-primary) !important;
+}
+
+.p-button-success:hover {
+  background: var(--mirante-secondary) !important;
+  border-color: var(--mirante-secondary) !important;
+}
+
+.p-button-text {
+  color: var(--mirante-primary);
+}
+
+.p-tag-info {
+  background: var(--mirante-light) !important;
+  color: var(--mirante-text) !important;
+  font-weight: 600;
+}
+
+.p-tag-success {
+  background: var(--mirante-primary) !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mirante-primary);
+  border-radius: 10px;
+}

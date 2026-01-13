@@ -1,0 +1,8 @@
+<div class="upload-box">
+  <label for="csvFile">Importar CSV</label>
+  <input id="csvFile" type="file" accept=".csv" (change)="onFile($event)" />
+
+  <div *ngIf="error" class="alert alert-danger mt-2">
+    {{ error }}
+  </div>
+</div>
