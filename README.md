@@ -172,3 +172,4 @@ Você pode baixar um CSV de teste pronto aqui:
 [Download CSV de exemplo](docs/vendas-exemplo.csv)
 
 MIT © Caique Matias Tuon
+# desafio-frontend
