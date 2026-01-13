@@ -1,13 +1,36 @@
-<div class="modal-header">
-  <h4 class="modal-title">Detalhes do Produto</h4>
-</div>
+<div
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="detalheTitulo"
+  aria-describedby="detalheDescricao"
+  tabindex="-1"
+>
+  <div class="modal-header">
+    <h4 class="modal-title" id="detalheTitulo">Detalhes do Produto</h4>
+  </div>
 
-<div class="modal-body">
-  <p><strong>Produto:</strong> {{ venda.produto }}</p>
-  <p><strong>Quantidade vendida:</strong> {{ venda.quantidade }}</p>
-  <p><strong>Valor total:</strong> {{ venda.valorTotal | currencyBR }}</p>
-</div>
+  <div class="modal-body" id="detalheDescricao">
+    <p>
+      <strong>Produto:</strong>
+      <span aria-label="Nome do produto">{{ venda.produto }}</span>
+    </p>
+    <p>
+      <strong>Quantidade vendida:</strong>
+      <span aria-label="Quantidade vendida">{{ venda.quantidade }}</span>
+    </p>
+    <p>
+      <strong>Valor total:</strong>
+      <span aria-label="Valor total">{{ venda.valorTotal | currencyBR }}</span>
+    </p>
+  </div>
 
-<div class="modal-footer">
-  <button class="btn btn-secondary" (click)="fechar()">Fechar</button>
+  <div class="modal-footer">
+    <button
+      class="btn btn-secondary"
+      (click)="fechar()"
+      aria-label="Fechar detalhes do produto"
+    >
+      Fechar
+    </button>
+  </div>
 </div>

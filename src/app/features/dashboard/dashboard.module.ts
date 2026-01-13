@@ -16,6 +16,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { DashboardComponent } from './dashboard.component';
 import { DetalheComponent } from './detalhe/detalhe.component';
 import { UploadComponent } from './upload/upload.component';
+import { PageHeaderComponent } from 'src/app/shared/components/page-header/page-header.component';
 
 import { CurrencyBrPipe } from '../../shared/pipes/currency-br.pipe';
 
@@ -25,6 +26,7 @@ import { CurrencyBrPipe } from '../../shared/pipes/currency-br.pipe';
     DashboardComponent,
     DetalheComponent,
     UploadComponent,
+    PageHeaderComponent,
   ],
   imports: [
     ButtonModule,

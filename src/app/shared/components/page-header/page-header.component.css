@@ -1,0 +1,39 @@
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: var(--surface-card);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  /* 🔥 Isso força tudo projetado via ng-content
+     a se comportar como item inline-flex */
+  > * {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+p {
+  margin: 0;
+  color: #6c757d;
+}

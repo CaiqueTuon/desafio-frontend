@@ -1,41 +1,45 @@
 <div class="dashboard">
   <div class="top">
-    <p-toolbar class="mb-4">
-      <div class="p-toolbar-group-left">
-        <h2>
-          <i class="pi pi-chart-bar" style="margin-right: 0.5rem"></i>
-          Relatório de Vendas
-        </h2>
-      </div>
-      <div class="p-toolbar-group-right">
-        <button
-          pButton
-          label="Exportar CSV"
-          icon="pi pi-download"
-          class="p-button-success"
-          (click)="downloadCSV()"
-        ></button>
-      </div>
-    </p-toolbar>
+    <app-page-header
+      title="Relatório de Vendas"
+      subtitle="Dashboard interativo a partir de CSV"
+    >
+      <button
+        pButton
+        label="Exportar CSV"
+        icon="pi pi-download"
+        class="p-button-success"
+        (click)="downloadCSV()"
+        aria-label="Exportar relatório de vendas em CSV"
+      ></button>
+    </app-page-header>
 
-    <app-upload (csvLoaded)="onCSVLoaded($event)"></app-upload>
+    <app-upload
+      aria-label="Upload de arquivo CSV de vendas"
+      (csvLoaded)="onCSVLoaded($event)"
+    ></app-upload>
   </div>
 
   <div class="kpi">
     <p-card>
       <h4>Total Geral</h4>
-      <h2>{{ totalGeral | currencyBR }}</h2>
+      <h2 aria-label="Valor total das vendas">
+        {{ totalGeral | currencyBR }}
+      </h2>
     </p-card>
   </div>
 
   <div class="kpi">
     <p-card>
       <h4>Produto mais vendido</h4>
-      <h2>{{ maisVendido?.produto || "-" }}</h2>
+      <h2 aria-label="Produto mais vendido">
+        {{ maisVendido?.produto || "-" }}
+      </h2>
       <p-tag
         *ngIf="maisVendido"
         severity="success"
         [value]="maisVendido.quantidade + ' unidades'"
+        aria-label="Quantidade vendida do produto mais vendido"
       ></p-tag>
     </p-card>
   </div>
@@ -43,7 +47,12 @@
   <div class="table">
     <span class="p-input-icon-left mb-2">
       <i class="pi pi-search"></i>
-      <input pInputText [(ngModel)]="filtro" placeholder="Buscar produto..." />
+      <input
+        pInputText
+        [(ngModel)]="filtro"
+        placeholder="Buscar produto..."
+        aria-label="Buscar produto pelo nome"
+      />
     </span>
 
     <p-table
@@ -55,29 +64,36 @@
       scrollHeight="400px"
       styleClass="p-datatable-sm p-datatable-striped"
       [sortMode]="'multiple'"
+      aria-label="Tabela de vendas agregadas por produto"
     >
       <ng-template pTemplate="header">
         <tr>
-          <th pSortableColumn="produto">
+          <th pSortableColumn="produto" aria-label="Coluna produto">
             Produto
             <p-sortIcon field="produto"></p-sortIcon>
           </th>
-          <th pSortableColumn="quantidade">
+          <th pSortableColumn="quantidade" aria-label="Coluna quantidade">
             Quantidade
             <p-sortIcon field="quantidade"></p-sortIcon>
           </th>
-          <th pSortableColumn="valorTotal">
+          <th pSortableColumn="valorTotal" aria-label="Coluna valor total">
             Valor Total
             <p-sortIcon field="valorTotal"></p-sortIcon>
           </th>
-          <th></th>
+          <th aria-label="Ações"></th>
         </tr>
       </ng-template>
 
       <ng-template pTemplate="body" let-row>
         <tr>
           <td>{{ row.produto }}</td>
-          <td><p-tag severity="info" [value]="row.quantidade"></p-tag></td>
+          <td>
+            <p-tag
+              severity="info"
+              [value]="row.quantidade"
+              aria-label="Quantidade vendida"
+            ></p-tag>
+          </td>
           <td>{{ row.valorTotal | currencyBR }}</td>
           <td>
             <button
@@ -85,6 +101,7 @@
               icon="pi pi-eye"
               class="p-button-text"
               (click)="abrirDetalhe(row)"
+              aria-label="Ver detalhes do produto {{ row.produto }}"
             ></button>
           </td>
         </tr>
@@ -95,7 +112,12 @@
   <div class="chart">
     <p-card>
       <h3>Quantidade por Produto</h3>
-      <p-chart type="bar" [data]="chartData" style="height: 100%"></p-chart>
+      <p-chart
+        type="bar"
+        [data]="chartData"
+        style="height: 100%"
+        aria-label="Gráfico de barras com quantidade de vendas por produto"
+      ></p-chart>
     </p-card>
   </div>
 </div>
