@@ -59,36 +59,46 @@ Ele segue boas práticas de Angular e é ideal para fins de portfólio ou prova 
 
 Antes de começar, você precisa ter instalado:
 
-Node.js (recomendado v16.x LTS)
+- **Node.js** (recomendado v16.x LTS)
 
-Baixe aqui: https://nodejs.org
+  Baixe aqui: https://nodejs.org
 
-Verifique a versão:
+  Verifique a versão:
 
-node -v
+  ```bash
+  node -v
+  ```
 
-NPM (geralmente já vem com o Node.js)
+- **NPM** (geralmente já vem com o Node.js)
 
-Verifique a versão:
+  Verifique a versão:
 
-npm -v
+  ```bash
+  npm -v
+  ```
 
-Angular CLI versão 13
+- **Angular CLI** versão 13
 
-Instale globalmente:
+  Instale globalmente:
 
-npm install -g @angular/cli@13
+  ```bash
+  npm install -g @angular/cli@13
+  ```
 
-Verifique a versão:
+  Verifique a versão:
 
-ng version
+  ```bash
+  ng version
+  ```
 
 **Passo 2 - Clonar o repositório**
 
 Abra um terminal ou prompt de comando e execute:
 
+```bash
 git clone https://github.com/CaiqueTuon/desafio-frontend.git
 cd desafio-frontend
+```
 
 Isso vai baixar todo o código do projeto para a sua máquina.
 
@@ -96,80 +106,93 @@ Isso vai baixar todo o código do projeto para a sua máquina.
 
 Dentro da pasta do projeto, execute:
 
+```bash
 npm install
+```
 
 Isso vai instalar todas as bibliotecas necessárias, incluindo Angular, PrimeNG, ngx-bootstrap, e dependências de build.
 
 Certifique-se de que o package.json tem as versões corretas:
 
-Angular 13.x
-
-PrimeNG 13.0.0-rc.2
-
-ngx-bootstrap 6.2.0
+- Angular 13.x
+- PrimeNG 13.0.0-rc.2
+- ngx-bootstrap 6.2.0
 
 **Passo 4 - Iniciar o servidor de desenvolvimento**
 
 Para rodar o projeto localmente:
 
+```bash
 ng serve
+```
 
 O Angular CLI vai compilar o projeto e iniciar um servidor local.
 
 O terminal mostrará algo como:
 
+```
 ** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+```
 
 **Passo 5 - Abrir no navegador**
 
 Abra o navegador de sua preferência e acesse:
 
+```
 http://localhost:4200
+```
 
 O dashboard será carregado com a tela inicial.
 
 Você pode importar o CSV de exemplo para testar todas as funcionalidades.
 
+---
+
 ## Como Usar
 
-    Clique em “Importar CSV” e selecione um arquivo .csv no formato:
+1. Clique em **"Importar CSV"** e selecione um arquivo `.csv` no formato:
 
+```csv
 produto,quantidade,preco_unitario
 Camiseta,3,49.90
 Calça,2,99.90
 Camiseta,1,49.90
 Tênis,1,199.90
+```
 
-    O dashboard atualizará automaticamente com:
+2. O dashboard atualizará automaticamente com:
 
-- Total Geral
+   - **Total Geral**
+   - **Produto mais vendido**
+   - Tabela agregada com filtros e ordenação
+   - Gráfico de barras
 
-- Produto mais vendido
+3. Clique no ícone 👁 na tabela para abrir o modal de detalhes do produto.
 
-- Tabela agregada com filtros e ordenação
+4. Clique em **"Exportar CSV"** para baixar os agregados (produto, quantidade, valor total, total geral, produto mais vendido).
 
-- Gráfico de barras
-
-  Clique no ícone 👁 na tabela para abrir o modal de detalhes do produto.
-
-  Clique em “Exportar CSV” para baixar os agregados (produto, quantidade, valor total, total geral, produto mais vendido).
+---
 
 ## Testes
 
 Testes unitários cobrem:
 
-    Parsing do CSV
-
-    Agregação de produtos
+- Parsing do CSV
+- Agregação de produtos
 
 Execute:
 
+```bash
 ng test
+```
+
+---
 
 ## CSV de Exemplo
 
 Você pode baixar um CSV de teste pronto aqui:
 [Download CSV de exemplo](docs/vendas-exemplo.csv)
 
+---
+
 MIT © Caique Matias Tuon
-# desafio-frontend
